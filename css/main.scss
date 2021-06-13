@@ -1,0 +1,806 @@
+@import "../node_modules/susy/sass/susy";
+@import "./varible.scss";
+@import "./global.scss";
+@import "./news.scss";
+@import "./service.scss";
+@import "./archive.scss";
+@import "../node_modules/font-awesome/css/font-awesome.min.css";
+
+$susy: (
+  columns: $columns,
+  math: fluid,
+  flow: rtl,
+  gutters: 0,
+  global-box-sizing: border-box,
+);
+
+.main-style {
+  padding: 0 8px;
+}
+
+.header-right {
+  background-color: $black-header;
+  text-align: center;
+  li {
+    display: inline-block;
+    &:hover {
+      a {
+        color: #fff;
+        transition: 0.3s all ease-in-out;
+      }
+    }
+    a {
+      padding: 8px 10px;
+      color: $gray-text-header;
+      font-size: 0.8em;
+    }
+  }
+  @include susy-breakpoint(480px) {
+    @include span(6);
+    text-align: right;
+  }
+}
+.top-header {
+  background-color: $black-header;
+}
+
+.header-social {
+  text-align: center;
+  li {
+    display: inline-block;
+    text-align: center;
+    &:hover {
+      a {
+        color: #fff;
+        transition: 0.3s all ease-in-out;
+      }
+    }
+    a {
+      color: $gray-text-header;
+      font-size: 0.8em;
+      padding: 8px 10px;
+    }
+  }
+  @include susy-breakpoint(480px) {
+    @include span(6 last);
+    text-align: left;
+  }
+}
+
+.logo {
+  text-align: center;
+  margin: 10px 0;
+  img {
+    width: 200px;
+    height: 60px;
+  }
+  @include susy-breakpoint(850px) {
+    @include span(3);
+  }
+}
+
+.menu {
+  @include span(12);
+  padding: 10px;
+  margin-top: 0;
+  position: relative;
+  .menu-details {
+    text-align: center;
+    @include span(12);
+    .active {
+      color: $green;
+    }
+    li {
+      display: block;
+      position: relative;
+      a {
+        font-size: 0.8em;
+        padding: 15px;
+        i {
+          position: absolute;
+          top: 20px;
+          left: 20px;
+        }
+      }
+      @include susy-breakpoint(850px) {
+        &:hover {
+          ul {
+            display: block;
+            background-color: $black-header;
+            z-index: 100;
+            @include susy-breakpoint(850px) {
+              width: 150px;
+              position: absolute;
+              top: 35px;
+              right: -48px;
+            }
+            li {
+              display: block;
+              border-bottom: 1px solid $border-gray;
+              &:nth-last-child(1) {
+                border-bottom: none;
+              }
+              a {
+                color: #fff;
+                padding: 10px;
+              }
+            }
+          }
+        }
+      }
+      ul {
+        display: none;
+      }
+    }
+    @include susy-breakpoint(850px) {
+      @include span(9);
+      text-align: center;
+      li {
+        display: inline-block;
+        a {
+          i {
+            left: 0px;
+          }
+        }
+      }
+    }
+    i {
+      padding-right: 3px;
+    }
+    .icon-bar {
+      cursor: pointer;
+      text-align: right;
+      padding: 5px 10px 0 0;
+      @include susy-breakpoint(850px) {
+        display: none;
+      }
+    }
+    .bar-details {
+      display: none;
+      @include susy-breakpoint(850px) {
+        display: block;
+      }
+    }
+  }
+  .menu-search {
+    @include span(3 last);
+    margin-top: 0;
+
+    .search {
+      border: 1px solid $border-gray;
+      padding: 10px;
+      border-radius: 15px;
+      width: 125px;
+      display: none;
+      position: absolute;
+      top: 30px;
+      left: 13px;
+      @include susy-breakpoint(850px) {
+        width: 150px;
+        top: 9px;
+        display: block;
+      }
+      &:focus {
+        outline: none;
+      }
+      &::placeholder {
+        font-size: 0.7em;
+        font-family: $vazir;
+      }
+    }
+    i {
+      position: absolute;
+      cursor: pointer;
+      top: 16px;
+      left: 14px;
+      color: $green;
+      @include susy-breakpoint(850px) {
+        font-size: 0.9em;
+        display: none;
+      }
+    }
+    .second {
+      display: none;
+      top: 20px;
+      left: 26px;
+      @include susy-breakpoint(850px) {
+        display: block;
+      }
+    }
+    @include susy-breakpoint(650px) {
+      @include span(2 last);
+      margin-top: 12;
+    }
+  }
+  @include susy-breakpoint(650px) {
+    @include span(12);
+  }
+  @include susy-breakpoint(850px) {
+    @include span(9 last);
+    margin-top: 12px;
+    padding: 0px;
+  }
+}
+
+.menu-bar {
+  padding-bottom: 24px;
+}
+.part-1 {
+  padding-bottom: 25px;
+  .col-1 {
+    padding-bottom: 25px;
+
+    .col1-content {
+      position: relative;
+    }
+    @include span(12);
+    .pullRight-details {
+      background-color: #fff;
+      position: absolute;
+      width: 80%;
+      bottom: 0;
+      right: 30px;
+      text-align: center;
+      padding: 10px;
+      font-size: 0.8em;
+      @include susy-breakpoint(550px) {
+        right: 50px;
+        h3 {
+          a {
+            font-size: 0.9em;
+          }
+        }
+      }
+      @include susy-breakpoint(1040px) {
+        right: 63px;
+        h3 {
+          a {
+            font-size: 1em;
+          }
+        }
+      }
+      h3 {
+        a {
+          padding: 10px 0;
+          font-size: 0.8em;
+        }
+      }
+      .up-title {
+        color: $red;
+      }
+    }
+    @include susy-breakpoint(850px) {
+      @include span(8);
+      padding-left: 25px;
+      padding-bottom: 0;
+    }
+  }
+
+  .col-2 {
+    @include span(12);
+    li {
+      padding-bottom: 16px;
+      &:nth-last-child(1) {
+        padding-bottom: 0;
+      }
+      @include susy-breakpoint(850px) {
+      }
+    }
+    .col2-right {
+      @include susy-breakpoint(450px) {
+        @include span(5);
+      }
+    }
+    .col2-left {
+      padding: 8px;
+      font-size: 0.8em;
+      .up-title {
+        color: $red;
+        padding-bottom: 8px;
+      }
+      @include susy-breakpoint(450px) {
+        @include span(7 last);
+      }
+    }
+
+    @include susy-breakpoint(850px) {
+      @include span(4 last);
+      padding-right: 10px;
+      padding: 0;
+    }
+  }
+}
+.more-news {
+  li {
+    padding: 0 8px;
+    h3 {
+      font-size: 0.9em;
+    }
+    .title {
+      padding-bottom: 8px;
+    }
+    .up-title {
+      color: $red;
+      font-size: 0.9em;
+      padding: 10px 0;
+    }
+    @include susy-breakpoint(550px) {
+      @include span(6);
+    }
+    @include susy-breakpoint(850px) {
+      padding-bottom: 0px;
+      @include span(3);
+    }
+  }
+}
+.part-2 {
+  padding-bottom: 25px;
+}
+.part-4 {
+  padding-bottom: 25px;
+}
+.part-6 {
+  padding-bottom: 25px;
+}
+.part-8 {
+  padding-bottom: 25px;
+}
+.part-3 {
+  padding-bottom: 25px;
+
+  .part3-pull-right {
+    @include susy-breakpoint(750px) {
+      @include span(5);
+    }
+  }
+  .part3-pull-left {
+    @include susy-breakpoint(750px) {
+      @include span(7 last);
+    }
+  }
+  .part3-col1 {
+    @include susy-breakpoint(750px) {
+      padding-left: 25px;
+    }
+  }
+  .part3-col2 {
+    @include susy-breakpoint(650px) {
+      @include span(5);
+    }
+  }
+  .part3-col3 {
+    @include span(12);
+
+    li {
+      padding: 10px 10px 30px;
+    }
+    .col3-image {
+      @include span(3);
+      img {
+        border-radius: 50%;
+      }
+      padding-left: 10px;
+    }
+    .col3-content {
+      @include span(9 last);
+      .title {
+        font-size: 0.8em;
+      }
+      .up-title {
+        color: $red;
+        font-size: 0.9em;
+        padding-bottom: 10px;
+      }
+    }
+    .options {
+      .up-title {
+        font-size: 0.9em;
+        color: $red;
+        padding-bottom: 10px;
+      }
+      margin-top: 20px;
+      .option-content {
+        text-align: center;
+        font-size: 0.8em;
+        .border {
+          width: 30%;
+          border-bottom: 1px solid $border-gray;
+          margin: 20px auto;
+        }
+      }
+    }
+    @include susy-breakpoint(650px) {
+      padding-right: 25px;
+      @include span(7 last);
+    }
+  }
+}
+.right-service {
+  padding-bottom: 25px;
+  .content {
+    padding: 10px 0 0 0;
+    .up-title {
+      color: $red;
+    }
+    .title {
+      font-size: 0.9em;
+      padding: 10px 0;
+    }
+    .border {
+      width: 30%;
+      border-bottom: 1px solid $border-gray;
+      margin: 16px 0;
+    }
+  }
+  @include susy-breakpoint(850px) {
+    padding-bottom: 0;
+  }
+}
+.middle-service {
+  padding-bottom: 25px;
+  .up-title {
+    color: $red;
+    font-size: 0.8em;
+    padding: 10px 0;
+  }
+  .title {
+    font-size: 0.8em;
+  }
+}
+.middle-service-bottom {
+  padding-bottom: 25px;
+  @include susy-breakpoint(850px) {
+    padding-bottom: 0;
+  }
+  .up-title {
+    color: $red;
+    font-size: 0.8em;
+    padding: 10px 0;
+  }
+  .title {
+    font-size: 0.8em;
+  }
+}
+.part-5 {
+  padding-bottom: 25px;
+  .part5-pull-right {
+    @include susy-breakpoint(850px) {
+      @include span(5);
+    }
+  }
+  .part5-pull-left {
+    @include susy-breakpoint(850px) {
+      @include span(7 last);
+    }
+  }
+}
+.part5-col1 {
+  @include susy-breakpoint(850px) {
+    padding-left: 25px;
+  }
+}
+.part5-col2 {
+  @include susy-breakpoint(650px) {
+    @include span(5);
+  }
+}
+.part5-col3 {
+  @include span(12);
+  .col3-header {
+    position: relative;
+    h3 {
+      text-align: center;
+      a {
+        width: 100%;
+        padding: 8px 0;
+        border: 2px solid $green-border;
+        font-size: 0.9em;
+      }
+    }
+    i {
+      color: $green-border;
+      position: absolute;
+      top: 35px;
+      font-size: 1.2em;
+      bottom: 0;
+      right: 48%;
+    }
+  }
+  ul {
+    padding-top: 15px;
+    li {
+      position: relative;
+      .number {
+        color: #008000;
+        position: absolute;
+        font-size: 2em;
+        right: 35px;
+        top: 35px;
+      }
+      background-color: $gray;
+      margin-bottom: 10px;
+      &:nth-last-child(1) {
+        margin-bottom: 0;
+      }
+      .col3-content {
+        width: 60%;
+        margin: 0 auto;
+        padding: 45px 0;
+        a {
+          line-height: 35px;
+        }
+      }
+      time {
+        font-size: 0.7em;
+      }
+    }
+  }
+  @include susy-breakpoint(650px) {
+    padding-right: 25px;
+    @include span(7 last);
+  }
+}
+.part-7 {
+  padding-bottom: 25px;
+  .part7-pull-right {
+    @include susy-breakpoint(850px) {
+      @include span(5);
+    }
+  }
+  .part7-pull-left {
+    @include susy-breakpoint(850px) {
+      @include span(7 last);
+    }
+  }
+  .part7-col1 {
+    @include susy-breakpoint(850px) {
+      padding-left: 25px;
+    }
+  }
+  .part7-col2 {
+    @include susy-breakpoint(650px) {
+      @include span(5);
+    }
+  }
+  .part7-col3 {
+    @include span(12);
+    a {
+      cursor: pointer;
+    }
+    .secoond,
+    .threid {
+      display: none;
+    }
+
+    .right-head {
+      @include span(4);
+      h3 {
+        padding-bottom: 10px;
+        a {
+          display: inline-block;
+          padding: 0 10px;
+
+          background-color: #fff;
+          border-right: 4px solid $gray-header;
+        }
+      }
+    }
+    .left-head {
+      @include span(8 last);
+      text-align: center;
+      @include susy-breakpoint(650px) {
+        text-align: left;
+      }
+      li {
+        display: inline-block;
+        font-size: 0.8em;
+        a {
+          color: $gray-text-header;
+          padding: 0 15px;
+        }
+      }
+    }
+    .part7-content {
+      li {
+        position: relative;
+        padding: 20px;
+        h4 {
+          padding-right: 35px;
+          font-size: 1em;
+        }
+        .number {
+          position: absolute;
+          color: $gray-header;
+          font-size: 3em;
+          top: 6px;
+          right: -3px;
+        }
+      }
+    }
+
+    @include susy-breakpoint(650px) {
+      @include span(7 last);
+      padding-right: 25px;
+    }
+  }
+}
+.part-9 {
+  padding-bottom: 25px;
+  .part9-right {
+    @include susy-breakpoint(850px) {
+      @include span(7);
+      padding-left: 25px;
+    }
+  }
+  .part9-left {
+    @include susy-breakpoint(850px) {
+      @include span(5 last);
+    }
+  }
+  .part9-col1 {
+    @include susy-breakpoint(650px) {
+      @include span(7);
+      padding-left: 25px;
+    }
+  }
+  .part9-col2 {
+    li {
+      padding-bottom: 15px;
+    }
+    @include susy-breakpoint(650px) {
+      @include span(5 last);
+    }
+  }
+  .part9-col3 {
+    @include span(12);
+    li {
+      padding: 10px;
+      @include susy-breakpoint(600px) {
+        @include span(6);
+      }
+      @include susy-breakpoint(850px) {
+        @include span(12);
+      }
+    }
+    .col3-right {
+      @include span(3);
+    }
+    .col3-left {
+      @include span(9 last);
+      .up-title {
+        font-size: 0.9em;
+        color: $red;
+        padding-bottom: 10px;
+      }
+      .title {
+        font-size: 0.8em;
+      }
+      padding-right: 10px;
+    }
+  }
+}
+
+.part10-details {
+  padding-bottom: 25px;
+  font-size: 0.8em;
+  .up-title {
+    padding: 8px 0;
+    color: $red;
+  }
+  li {
+    padding: 10px;
+    @include susy-breakpoint(550px) {
+      @include span(6);
+    }
+    @include susy-breakpoint(850px) {
+      @include span(4);
+    }
+  }
+}
+
+.part-11 {
+  .part11-right {
+    padding-bottom: 25px;
+    @include susy-breakpoint(850px) {
+      @include span(7);
+    }
+  }
+
+  .part11-col1 {
+    @include susy-breakpoint(650px) {
+      @include span(7);
+      padding-left: 25px;
+    }
+  }
+  .part11-col2 {
+    padding-top: 15px;
+    li {
+      padding-bottom: 10px;
+    }
+    @include susy-breakpoint(650px) {
+      @include span(5 last);
+      padding-top: 0;
+    }
+  }
+  @include susy-breakpoint(650px) {
+    width: 100%;
+  }
+}
+footer {
+  .footer-title {
+    background-color: #1d1d1d;
+    text-align: center;
+    padding-top: 20px;
+    a {
+      color: #fff;
+      padding: 10px;
+    }
+  }
+  .topmenu-footer {
+    background-color: #111111;
+    .footer-nav {
+      width: 60%;
+      margin: 0 auto;
+      ul {
+        text-align: center;
+        li {
+          display: inline-block;
+          a {
+            font-size: 0.8em;
+          }
+          i {
+            font-size: 0.3em;
+            color: #c8252b;
+          }
+        }
+      }
+    }
+  }
+  .footer-details {
+    padding: 10px 0;
+    border-top: 1px solid $border-gray;
+    border-bottom: 1px solid $border-gray;
+  }
+  .footer-social {
+    ul {
+      text-align: center;
+      li {
+        display: inline-block;
+        a {
+          font-size: 1.2em;
+          color: $gray-text-header;
+          padding: 5px;
+        }
+      }
+    }
+    @include susy-breakpoint(650px) {
+      text-align: right;
+    }
+  }
+  .footer-logo {
+    img {
+      width: 200px;
+      height: 60px;
+    }
+    text-align: center;
+    @include susy-breakpoint(650px) {
+    }
+  }
+  .footer-menu {
+    li {
+      display: inline-block;
+      a {
+        color: $gray-text-header;
+        font-size: 0.8em;
+        padding: 8px 10px;
+      }
+    }
+  }
+  .copywrite {
+    color: #e48b90;
+    text-align: center;
+    padding: 5px;
+    font-size: 0.8em;
+    padding-bottom: 40px;
+  }
+}
