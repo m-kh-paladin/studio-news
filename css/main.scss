@@ -223,7 +223,9 @@ $susy: (
 }
 
 .menu-bar {
-  padding-bottom: 24px;
+  @include susy-breakpoint(850px) {
+    padding-bottom: 24px;
+  }
 }
 .part-1 {
   padding-bottom: 25px;

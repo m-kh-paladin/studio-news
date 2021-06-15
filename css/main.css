@@ -148,7 +148,7 @@ ul {
   padding: 10px 0; }
 
 .col-right .up-title h4 {
-  color: #008000;
+  color: #505050;
   padding: 10px 0 5px; }
 
 .col-right .lead {
@@ -443,11 +443,17 @@ ul {
     color: #cd9a41; }
 
 .service-right .part2 .more-news {
+  display: blocks;
+  width: 100%;
   color: #fff;
   background-color: #cd9a41;
+  text-align: center;
   padding: 3px 5px;
-  margin: 10px 0;
-  float: left; }
+  margin: 10px 0; }
+  @media (min-width: 850px) {
+    .service-right .part2 .more-news {
+      float: left;
+      width: auto; } }
 
 .service-header h3 {
   margin-bottom: 25px; }
@@ -825,8 +831,9 @@ ul {
       margin-top: 12px;
       padding: 0px; } }
 
-.menu-bar {
-  padding-bottom: 24px; }
+@media (min-width: 850px) {
+  .menu-bar {
+    padding-bottom: 24px; } }
 
 .part-1 {
   padding-bottom: 25px; }

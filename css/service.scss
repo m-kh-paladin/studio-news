@@ -111,11 +111,17 @@ $susy: (
       }
     }
     .more-news {
+      @include susy-breakpoint(850px) {
+        float: left;
+        width: auto;
+      }
+      display: blocks;
+      width: 100%;
       color: #fff;
       background-color: #cd9a41;
+      text-align: center;
       padding: 3px 5px;
       margin: 10px 0;
-      float: left;
     }
   }
 }
